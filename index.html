@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/material-ui/5.0.0-beta.5/index.js" integrity="sha512-uKxirna7d5STmVXEMQYBVRW1nERrqHjwOubv4QcK4oYaaifLiEnN/aLIJxVsyK4R1K+awpNIG73RaQfT1DZ8ew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+
+        button{
+            height: 65px;
+            width: 65px;
+            font-size: 18px;
+            margin-left: -30px;
+            background-color:red;
+            border: none;
+            border-radius: 50px;
+            color:white;
+            cursor: pointer;
+        }
+
+
+        input{
+            
+            transition: all 1s ease;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            height: 40px;
+            width: 0;
+
+        }
+
+        input[placeholder]{
+            padding-left: 20px;
+        }
+
+        input:active{
+            outline: none;
+            border: none;
+        }
+
+        input:focus{
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <input type="text" placeholder="Search !" id="input">
+        <button id="open" onclick="showIp()"><i class="fa fa-search"></i></button>
+        <button id="close" onclick="closeFun()" style="visibility:hidden;padding-left: -30px;">X</button>
+    </div>
+    
+    <script>
+        function showIp(){
+            document.getElementById("input").style.width = "200px";
+            document.getElementById("open").style.visibility = "hidden";
+            document.getElementById("close").style.visibility = "visible";
+            document.getElementById("open").style.display = "none";
+            document.getElementById("close").style.backgroundColor = "black";
+            document.body.style.backgroundColor = "white";
+        }
+
+        function closeFun(){
+            document.getElementById("input").style.width = "0";
+            document.getElementById("open").style.visibility = "visible";
+            document.getElementById("open").style.display = "inline";
+            document.getElementById("close").style.visibility = "hidden";
+            document.body.style.backgroundColor = "black";
+        }
+    </script>
+
+</body>
+</html>
